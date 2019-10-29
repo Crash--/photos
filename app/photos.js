@@ -622,29 +622,63 @@ ShareRecipientsInput.defaultProps = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var cozy_doctypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! cozy-doctypes */ "Le8U");
-/* harmony import */ var cozy_doctypes__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(cozy_doctypes__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "lwsE");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "W8MJ");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "a1gu");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "Nsbk");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "7W2i");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var cozy_doctypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! cozy-doctypes */ "Le8U");
+/* harmony import */ var cozy_doctypes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(cozy_doctypes__WEBPACK_IMPORTED_MODULE_5__);
 
 
-class Contact extends cozy_doctypes__WEBPACK_IMPORTED_MODULE_0__["Contact"] {
-  static getInitials(contactOrRecipient, defaultValue = '') {
-    if (Contact.isContact(contactOrRecipient)) {
-      return cozy_doctypes__WEBPACK_IMPORTED_MODULE_0__["Contact"].getInitials(contactOrRecipient);
-    } else {
-      const s = contactOrRecipient.public_name || contactOrRecipient.name || contactOrRecipient.email;
-      return s && s[0].toUpperCase() || defaultValue;
-    }
+
+
+
+
+
+var Contact =
+/*#__PURE__*/
+function (_DoctypeContact) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(Contact, _DoctypeContact);
+
+  function Contact() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Contact);
+
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(Contact).apply(this, arguments));
   }
 
-  static getDisplayName(contact, defaultValue = '') {
-    if (Contact.isContact(contact)) {
-      return cozy_doctypes__WEBPACK_IMPORTED_MODULE_0__["Contact"].getDisplayName(contact);
-    } else {
-      return contact.public_name || contact.name || contact.email || defaultValue;
-    }
-  }
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Contact, null, [{
+    key: "getInitials",
+    value: function getInitials(contactOrRecipient) {
+      var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
-}
+      if (Contact.isContact(contactOrRecipient)) {
+        return cozy_doctypes__WEBPACK_IMPORTED_MODULE_5__["Contact"].getInitials(contactOrRecipient);
+      } else {
+        var s = contactOrRecipient.public_name || contactOrRecipient.name || contactOrRecipient.email;
+        return s && s[0].toUpperCase() || defaultValue;
+      }
+    }
+  }, {
+    key: "getDisplayName",
+    value: function getDisplayName(contact) {
+      var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+      if (Contact.isContact(contact)) {
+        return cozy_doctypes__WEBPACK_IMPORTED_MODULE_5__["Contact"].getDisplayName(contact);
+      } else {
+        return contact.public_name || contact.name || contact.email || defaultValue;
+      }
+    }
+  }]);
+
+  return Contact;
+}(cozy_doctypes__WEBPACK_IMPORTED_MODULE_5__["Contact"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Contact);
 
@@ -1594,22 +1628,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const confirm = (component, saga) => {
-  const wrapper = document.body.appendChild(document.createElement('div'));
+var confirm = function confirm(component, saga) {
+  var wrapper = document.body.appendChild(document.createElement('div'));
 
-  const abort = () => {
+  var abort = function abort() {
     react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.unmountComponentAtNode(wrapper);
   };
 
-  const confirm = () => {
-    saga().then(() => {
+  var confirm = function confirm() {
+    saga().then(function () {
       react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.unmountComponentAtNode(wrapper);
     });
   };
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(component, {
-    confirm,
-    abort
+    confirm: confirm,
+    abort: abort
   }), wrapper);
 };
 
@@ -2292,40 +2326,115 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REF_BACKUP", function() { return REF_BACKUP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getReferencedFolders", function() { return getReferencedFolders; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getOrCreateFolderWithReference", function() { return getOrCreateFolderWithReference; });
-/* harmony import */ var drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! drive/lib/doctypes */ "z6Q1");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "o0o1");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "yXPU");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! drive/lib/doctypes */ "z6Q1");
 
-const REF_PHOTOS = `${drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_APPS"]}/photos`;
-const REF_UPLOAD = `${drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_APPS"]}/photos/upload`;
-const REF_BACKUP = `${drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_APPS"]}/photos/mobile`;
-const getReferencedFolders = async (client, reference) => {
-  const {
-    included
-  } = await client.collection(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_FILES"]).findReferencedBy({
-    _type: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_APPS"],
-    _id: reference
-  });
-  return included.filter(folder => /^\/\.cozy_trash/.test(folder.attributes.path) === false);
-};
-const getOrCreateFolderWithReference = async (client, path, reference) => {
-  const existingFolders = await getReferencedFolders(client, reference);
 
-  if (existingFolders.length) {
-    return existingFolders[0];
-  } else {
-    const collection = client.collection(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_FILES"]);
-    const dirId = await collection.ensureDirectoryExists(path);
-    await collection.addReferencesTo({
-      _id: reference,
-      _type: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_APPS"]
-    }, [{
-      _id: dirId
-    }]);
-    const {
-      data: dirInfos
-    } = await collection.get(dirId);
-    return dirInfos;
-  }
-};
+
+var REF_PHOTOS = "".concat(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_2__["DOCTYPE_APPS"], "/photos");
+var REF_UPLOAD = "".concat(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_2__["DOCTYPE_APPS"], "/photos/upload");
+var REF_BACKUP = "".concat(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_2__["DOCTYPE_APPS"], "/photos/mobile");
+var getReferencedFolders =
+/*#__PURE__*/
+function () {
+  var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(client, reference) {
+    var _ref2, included;
+
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return client.collection(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_2__["DOCTYPE_FILES"]).findReferencedBy({
+              _type: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_2__["DOCTYPE_APPS"],
+              _id: reference
+            });
+
+          case 2:
+            _ref2 = _context.sent;
+            included = _ref2.included;
+            return _context.abrupt("return", included.filter(function (folder) {
+              return /^\/\.cozy_trash/.test(folder.attributes.path) === false;
+            }));
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function getReferencedFolders(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+var getOrCreateFolderWithReference =
+/*#__PURE__*/
+function () {
+  var _ref3 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(client, path, reference) {
+    var existingFolders, collection, dirId, _ref4, dirInfos;
+
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return getReferencedFolders(client, reference);
+
+          case 2:
+            existingFolders = _context2.sent;
+
+            if (!existingFolders.length) {
+              _context2.next = 7;
+              break;
+            }
+
+            return _context2.abrupt("return", existingFolders[0]);
+
+          case 7:
+            collection = client.collection(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_2__["DOCTYPE_FILES"]);
+            _context2.next = 10;
+            return collection.ensureDirectoryExists(path);
+
+          case 10:
+            dirId = _context2.sent;
+            _context2.next = 13;
+            return collection.addReferencesTo({
+              _id: reference,
+              _type: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_2__["DOCTYPE_APPS"]
+            }, [{
+              _id: dirId
+            }]);
+
+          case 13:
+            _context2.next = 15;
+            return collection.get(dirId);
+
+          case 15:
+            _ref4 = _context2.sent;
+            dirInfos = _ref4.data;
+            return _context2.abrupt("return", dirInfos);
+
+          case 18:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+
+  return function getOrCreateFolderWithReference(_x3, _x4, _x5) {
+    return _ref3.apply(this, arguments);
+  };
+}();
 
 /***/ }),
 
@@ -2521,7 +2630,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Photo__WEBPACK_IMPORTED_MODULE_10__["default"], {
           photo: photo,
           box: layout.boxes[index],
-          key: photo.id,
+          key: photo.id + index,
           selected: _this.isPhotoSelected(photo, selected),
           onToggle: onPhotoToggle
         });
@@ -3343,7 +3452,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var models__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! models */ "OjRq");
 
 
-const contactsResponseType = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
+var contactsResponseType = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
   count: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number,
   data: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.arrayOf(models__WEBPACK_IMPORTED_MODULE_1__["Contact"].propType),
   definition: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object,
@@ -3355,7 +3464,7 @@ const contactsResponseType = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.s
   lastFetch: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number,
   lastUpdate: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number
 });
-const groupsResponseType = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
+var groupsResponseType = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
   count: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number,
   data: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.arrayOf(models__WEBPACK_IMPORTED_MODULE_1__["Group"].propType),
   definition: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object,
@@ -4168,22 +4277,63 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DESKTOP_BANNER", function() { return DESKTOP_BANNER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NOVIEWER_DESKTOP_CTA", function() { return NOVIEWER_DESKTOP_CTA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isClientAlreadyInstalled", function() { return isClientAlreadyInstalled; });
-/* harmony import */ var cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! cozy-ui/react/helpers/tracker */ "4kcP");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "o0o1");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "yXPU");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! cozy-ui/react/helpers/tracker */ "4kcP");
+
+
+
 /* global cozy */
 
-const track = element => {
-  const tracker = Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_0__["getTracker"])();
+var track = function track(element) {
+  var tracker = Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_2__["getTracker"])();
   tracker && tracker.push(['trackEvent', 'interaction', 'desktop-prompt', element]);
 };
-const isLinux = () => window.navigator && window.navigator.appVersion.indexOf('Win') === -1 && window.navigator.appVersion.indexOf('Mac') === -1;
-const isAndroid = () => window.navigator.userAgent && window.navigator.userAgent.indexOf('Android') >= 0;
-const isIOS = () => window.navigator.userAgent && /iPad|iPhone|iPod/.test(window.navigator.userAgent);
-const DESKTOP_BANNER = 'desktop_banner';
-const NOVIEWER_DESKTOP_CTA = 'noviewer_desktop_cta';
-const isClientAlreadyInstalled = async () => {
-  const resp = await cozy.client.fetchJSON('GET', '/settings/clients');
-  return resp.some(device => device.attributes.software_id === 'github.com/cozy-labs/cozy-desktop');
+var isLinux = function isLinux() {
+  return window.navigator && window.navigator.appVersion.indexOf('Win') === -1 && window.navigator.appVersion.indexOf('Mac') === -1;
 };
+var isAndroid = function isAndroid() {
+  return window.navigator.userAgent && window.navigator.userAgent.indexOf('Android') >= 0;
+};
+var isIOS = function isIOS() {
+  return window.navigator.userAgent && /iPad|iPhone|iPod/.test(window.navigator.userAgent);
+};
+var DESKTOP_BANNER = 'desktop_banner';
+var NOVIEWER_DESKTOP_CTA = 'noviewer_desktop_cta';
+var isClientAlreadyInstalled =
+/*#__PURE__*/
+function () {
+  var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+    var resp;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return cozy.client.fetchJSON('GET', '/settings/clients');
+
+          case 2:
+            resp = _context.sent;
+            return _context.abrupt("return", resp.some(function (device) {
+              return device.attributes.software_id === 'github.com/cozy-labs/cozy-desktop';
+            }));
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function isClientAlreadyInstalled() {
+    return _ref.apply(this, arguments);
+  };
+}();
 
 /***/ }),
 
@@ -4326,7 +4476,7 @@ var Layout = function Layout(_ref) {
       children = _ref.children;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_react_Layout__WEBPACK_IMPORTED_MODULE_3__["Layout"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_react_Sidebar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: _styles_layout__WEBPACK_IMPORTED_MODULE_0___default.a['pho-sidebar']
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_cozy_helpers__WEBPACK_IMPORTED_MODULE_12__["ModalManager"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_react_Nav__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_react_Nav__WEBPACK_IMPORTED_MODULE_5__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(NavLink, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_react_Nav__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_react_Nav__WEBPACK_IMPORTED_MODULE_5__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(NavLink, {
     to: "/photos"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_react_Nav__WEBPACK_IMPORTED_MODULE_5__["NavIcon"], {
     icon: "image"
@@ -4340,7 +4490,7 @@ var Layout = function Layout(_ref) {
     t: t
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ducks_upload__WEBPACK_IMPORTED_MODULE_10__["UploadQueue"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_react_Layout__WEBPACK_IMPORTED_MODULE_3__["Main"], {
     className: _styles_layout__WEBPACK_IMPORTED_MODULE_0___default.a['pho-content']
-  },  true && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_pushClient_Banner__WEBPACK_IMPORTED_MODULE_8__["default"], null), children), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_transpiled_react__WEBPACK_IMPORTED_MODULE_11__["IconSprite"], null));
+  },  true && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_pushClient_Banner__WEBPACK_IMPORTED_MODULE_8__["default"], null), children), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_cozy_helpers__WEBPACK_IMPORTED_MODULE_12__["ModalManager"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(cozy_ui_transpiled_react__WEBPACK_IMPORTED_MODULE_11__["IconSprite"], null));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Object(cozy_ui_react_I18n__WEBPACK_IMPORTED_MODULE_2__["translate"])()(Layout));
 
@@ -4429,8 +4579,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isSameHour", function() { return isSameHour; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEqualOrNewer", function() { return isEqualOrNewer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEqualOrOlder", function() { return isEqualOrOlder; });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ "NAv5");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(date_fns__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "J4zp");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ "NAv5");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(date_fns__WEBPACK_IMPORTED_MODULE_1__);
+
 
 /**
  *  Format the date as specified by the formatter parameter.
@@ -4445,49 +4598,59 @@ __webpack_require__.r(__webpack_exports__);
  * @returns {string} The formatted date
  */
 
-const formatDate = (f, date, formatter) => {
-  const [year, month, day] = date.substr(0, 10).split('-');
-  const [hours, minutes, seconds] = date.length > 10 ? date.substr(11, 8).split(':') : [0, 0, 0];
+var formatDate = function formatDate(f, date, formatter) {
+  var _date$substr$split = date.substr(0, 10).split('-'),
+      _date$substr$split2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_date$substr$split, 3),
+      year = _date$substr$split2[0],
+      month = _date$substr$split2[1],
+      day = _date$substr$split2[2];
+
+  var _ref = date.length > 10 ? date.substr(11, 8).split(':') : [0, 0, 0],
+      _ref2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_ref, 3),
+      hours = _ref2[0],
+      minutes = _ref2[1],
+      seconds = _ref2[2];
+
   return f(new Date(year, month - 1, day, hours, minutes, seconds), formatter);
 };
 
-const formatH = (f, date) => {
+var formatH = function formatH(f, date) {
   return formatDate(f, date, 'HH');
 };
-const formatD = (f, date) => {
+var formatD = function formatD(f, date) {
   return formatDate(f, date, 'DD');
 };
-const formatDMY = (f, date) => {
+var formatDMY = function formatDMY(f, date) {
   return formatDate(f, date, 'DD MMMM') + addYear(f, date);
 };
-const formatYMD = (f, date) => {
+var formatYMD = function formatYMD(f, date) {
   return formatDate(f, date, 'YYYY-MM-DD');
 };
 
-const addYear = (f, date) => {
-  return Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["isThisYear"])(date) ? '' : formatDate(f, date, ' YYYY');
+var addYear = function addYear(f, date) {
+  return Object(date_fns__WEBPACK_IMPORTED_MODULE_1__["isThisYear"])(date) ? '' : formatDate(f, date, ' YYYY');
 };
 
-const isSameMonth = (f, newerDate, olderDate) => {
-  const newer = formatDate(f, newerDate);
-  const older = formatDate(f, olderDate);
-  return Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["differenceInCalendarMonths"])(newer, older) === 0;
+var isSameMonth = function isSameMonth(f, newerDate, olderDate) {
+  var newer = formatDate(f, newerDate);
+  var older = formatDate(f, olderDate);
+  return Object(date_fns__WEBPACK_IMPORTED_MODULE_1__["differenceInCalendarMonths"])(newer, older) === 0;
 };
-const isSameDay = (f, newerDate, olderDate) => {
-  const newer = formatDate(f, newerDate);
-  const older = formatDate(f, olderDate);
-  return Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["differenceInCalendarDays"])(newer, older) === 0;
+var isSameDay = function isSameDay(f, newerDate, olderDate) {
+  var newer = formatDate(f, newerDate);
+  var older = formatDate(f, olderDate);
+  return Object(date_fns__WEBPACK_IMPORTED_MODULE_1__["differenceInCalendarDays"])(newer, older) === 0;
 };
-const isSameHour = (f, newerDate, olderDate) => {
-  const newer = formatDate(f, newerDate);
-  const older = formatDate(f, olderDate);
-  return Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["differenceInHours"])(newer, older) === 0;
+var isSameHour = function isSameHour(f, newerDate, olderDate) {
+  var newer = formatDate(f, newerDate);
+  var older = formatDate(f, olderDate);
+  return Object(date_fns__WEBPACK_IMPORTED_MODULE_1__["differenceInHours"])(newer, older) === 0;
 };
-const isEqualOrNewer = (newerDate, olderDate) => {
-  return Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["compareAsc"])(newerDate, olderDate) >= 0;
+var isEqualOrNewer = function isEqualOrNewer(newerDate, olderDate) {
+  return Object(date_fns__WEBPACK_IMPORTED_MODULE_1__["compareAsc"])(newerDate, olderDate) >= 0;
 };
-const isEqualOrOlder = (newerDate, olderDate) => {
-  return Object(date_fns__WEBPACK_IMPORTED_MODULE_0__["compareAsc"])(newerDate, olderDate) <= 0;
+var isEqualOrOlder = function isEqualOrOlder(newerDate, olderDate) {
+  return Object(date_fns__WEBPACK_IMPORTED_MODULE_1__["compareAsc"])(newerDate, olderDate) <= 0;
 };
 
 /***/ }),
@@ -5126,40 +5289,78 @@ RecipientPlusX.contextTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! drive/lib/doctypes */ "z6Q1");
-/* harmony import */ var cozy_doctypes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! cozy-doctypes */ "Le8U");
-/* harmony import */ var cozy_doctypes__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cozy_doctypes__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var cozy_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! cozy-client */ "SH7X");
-/* harmony import */ var cozy_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(cozy_client__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "lwsE");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "W8MJ");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "a1gu");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "Nsbk");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "7W2i");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! drive/lib/doctypes */ "z6Q1");
+/* harmony import */ var cozy_doctypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! cozy-doctypes */ "Le8U");
+/* harmony import */ var cozy_doctypes__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(cozy_doctypes__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var cozy_client__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! cozy-client */ "SH7X");
+/* harmony import */ var cozy_client__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(cozy_client__WEBPACK_IMPORTED_MODULE_7__);
 
 
 
 
-class HasManyAlbums extends cozy_client__WEBPACK_IMPORTED_MODULE_2__["HasMany"] {
-  get data() {
-    const refs = this.target.relationships.referenced_by.data;
-    const albums = refs ? refs.map(ref => this.get(ref.type, ref.id)).filter(Boolean) : [];
-    return albums;
+
+
+
+
+
+var HasManyAlbums =
+/*#__PURE__*/
+function (_HasMany) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(HasManyAlbums, _HasMany);
+
+  function HasManyAlbums() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, HasManyAlbums);
+
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(HasManyAlbums).apply(this, arguments));
   }
 
-  static query(doc, client, assoc) {
-    if (!doc.relationships || !doc.relationships.referenced_by || !doc.relationships.referenced_by.data) {
-      return null;
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(HasManyAlbums, [{
+    key: "data",
+    get: function get() {
+      var _this = this;
+
+      var refs = this.target.relationships.referenced_by.data;
+      var albums = refs ? refs.map(function (ref) {
+        return _this.get(ref.type, ref.id);
+      }).filter(Boolean) : [];
+      return albums;
     }
+  }], [{
+    key: "query",
+    value: function query(doc, client, assoc) {
+      if (!doc.relationships || !doc.relationships.referenced_by || !doc.relationships.referenced_by.data) {
+        return null;
+      }
 
-    const included = doc.relationships.referenced_by.data;
-    const ids = included.filter(inc => inc.type === assoc.doctype).map(inc => inc.id);
-    return new cozy_client__WEBPACK_IMPORTED_MODULE_2__["QueryDefinition"]({
-      doctype: assoc.doctype,
-      ids
-    });
-  }
+      var included = doc.relationships.referenced_by.data;
+      var ids = included.filter(function (inc) {
+        return inc.type === assoc.doctype;
+      }).map(function (inc) {
+        return inc.id;
+      });
+      return new cozy_client__WEBPACK_IMPORTED_MODULE_7__["QueryDefinition"]({
+        doctype: assoc.doctype,
+        ids: ids
+      });
+    }
+  }]);
 
-}
+  return HasManyAlbums;
+}(cozy_client__WEBPACK_IMPORTED_MODULE_7__["HasMany"]);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   albums: {
-    doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_ALBUMS"],
+    doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_5__["DOCTYPE_ALBUMS"],
     attributes: {
       name: {
         type: 'string'
@@ -5168,21 +5369,21 @@ class HasManyAlbums extends cozy_client__WEBPACK_IMPORTED_MODULE_2__["HasMany"] 
     relationships: {
       photos: {
         type: 'has-many',
-        doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_FILES"]
+        doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_5__["DOCTYPE_FILES"]
       }
     }
   },
   files: {
-    doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_FILES"],
+    doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_5__["DOCTYPE_FILES"],
     relationships: {
       albums: {
         type: HasManyAlbums,
-        doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_0__["DOCTYPE_ALBUMS"]
+        doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_5__["DOCTYPE_ALBUMS"]
       }
     }
   },
   contacts: {
-    doctype: cozy_doctypes__WEBPACK_IMPORTED_MODULE_1__["Contact"].doctype
+    doctype: cozy_doctypes__WEBPACK_IMPORTED_MODULE_6__["Contact"].doctype
   }
 });
 
@@ -5201,10 +5402,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var minilog__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(minilog__WEBPACK_IMPORTED_MODULE_0__);
 /* global __APP_SLUG__ */
 
-const logger = minilog__WEBPACK_IMPORTED_MODULE_0___default()(`cozy-${"photos"}`);
+var logger = minilog__WEBPACK_IMPORTED_MODULE_0___default()("cozy-".concat("photos"));
 minilog__WEBPACK_IMPORTED_MODULE_0___default.a.enable();
-minilog__WEBPACK_IMPORTED_MODULE_0___default.a.suggest.allow(`cozy-${"photos"}`, 'log');
-minilog__WEBPACK_IMPORTED_MODULE_0___default.a.suggest.allow(`cozy-${"photos"}`, 'info');
+minilog__WEBPACK_IMPORTED_MODULE_0___default.a.suggest.allow("cozy-".concat("photos"), 'log');
+minilog__WEBPACK_IMPORTED_MODULE_0___default.a.suggest.allow("cozy-".concat("photos"), 'info');
 /* harmony default export */ __webpack_exports__["default"] = (logger);
 
 /***/ }),
@@ -5957,31 +6158,35 @@ __webpack_require__.r(__webpack_exports__);
  // TODO: sadly we have different versions of contacts' doctype to handle...
 // A migration tool on the stack side is needed here
 
-const emailMatch = (input, contact) => {
+var emailMatch = function emailMatch(input, contact) {
   if (!contact.email) return false;
-  const emailInput = new RegExp(input, 'i');
+  var emailInput = new RegExp(input, 'i');
 
   if (Array.isArray(contact.email)) {
-    return contact.email.some(email => emailInput.test(email.address));
+    return contact.email.some(function (email) {
+      return emailInput.test(email.address);
+    });
   }
 
   return emailInput.test(contact.email);
 };
 
-const cozyUrlMatch = (input, contact) => {
+var cozyUrlMatch = function cozyUrlMatch(input, contact) {
   if (!contact.cozy && !contact.url) return false;
-  const urlInput = new RegExp(input, 'i');
+  var urlInput = new RegExp(input, 'i');
 
   if (contact.cozy && Array.isArray(contact.cozy)) {
-    return contact.cozy.some(cozy => urlInput.test(cozy.url));
+    return contact.cozy.some(function (cozy) {
+      return urlInput.test(cozy.url);
+    });
   }
 
   return urlInput.test(contact.url);
 };
 
-const groupNameMatch = (input, contactOrGroup) => {
+var groupNameMatch = function groupNameMatch(input, contactOrGroup) {
   if (contactOrGroup._type !== cozy_doctypes__WEBPACK_IMPORTED_MODULE_0__["Group"].doctype) return false;
-  const nameInput = new RegExp(input, 'i');
+  var nameInput = new RegExp(input, 'i');
   return nameInput.test(contactOrGroup.name);
 };
 
@@ -6021,53 +6226,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasSharedChild", function() { return hasSharedChild; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isShared", function() { return isShared; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSharingDocIds", function() { return getSharingDocIds; });
-/* harmony import */ var lodash_get__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/get */ "mwIZ");
-/* harmony import */ var lodash_get__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_get__WEBPACK_IMPORTED_MODULE_0__);
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "RIqP");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "lSNA");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "QILm");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "MVZn");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var lodash_get__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/get */ "mwIZ");
+/* harmony import */ var lodash_get__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_get__WEBPACK_IMPORTED_MODULE_4__);
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
 
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
 
 function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var RECEIVE_SHARINGS = 'RECEIVE_SHARINGS';
+var ADD_SHARING = 'ADD_SHARING';
+var UPDATE_SHARING = 'UPDATE_SHARING';
+var REVOKE_RECIPIENT = 'REVOKE_RECIPIENT';
+var REVOKE_SELF = 'REVOKE_SELF';
+var ADD_SHARING_LINK = 'ADD_SHARING_LINK';
+var REVOKE_SHARING_LINK = 'REVOKE_SHARING_LINK';
+var RECEIVE_PATHS = 'RECEIVE_PATHS'; // actions
 
-
-const RECEIVE_SHARINGS = 'RECEIVE_SHARINGS';
-const ADD_SHARING = 'ADD_SHARING';
-const UPDATE_SHARING = 'UPDATE_SHARING';
-const REVOKE_RECIPIENT = 'REVOKE_RECIPIENT';
-const REVOKE_SELF = 'REVOKE_SELF';
-const ADD_SHARING_LINK = 'ADD_SHARING_LINK';
-const REVOKE_SHARING_LINK = 'REVOKE_SHARING_LINK';
-const RECEIVE_PATHS = 'RECEIVE_PATHS'; // actions
-
-const receiveSharings = ({
-  instanceUri,
-  sharings = [],
-  permissions = [],
-  apps = []
-}) => ({
-  type: RECEIVE_SHARINGS,
-  data: {
-    sharings: sharings.filter(s => !areAllRecipientsRevoked(s) && !hasBeenSelfRevoked(s, instanceUri)),
-    permissions,
-    apps
-  }
-});
-const addSharing = (data, path) => ({
-  type: ADD_SHARING,
-  data,
-  path
-});
-const updateSharing = sharing => ({
-  type: UPDATE_SHARING,
-  sharing
-});
-const revokeRecipient = (sharing, index, path) => {
+var receiveSharings = function receiveSharings(_ref) {
+  var instanceUri = _ref.instanceUri,
+      _ref$sharings = _ref.sharings,
+      sharings = _ref$sharings === void 0 ? [] : _ref$sharings,
+      _ref$permissions = _ref.permissions,
+      permissions = _ref$permissions === void 0 ? [] : _ref$permissions,
+      _ref$apps = _ref.apps,
+      apps = _ref$apps === void 0 ? [] : _ref$apps;
+  return {
+    type: RECEIVE_SHARINGS,
+    data: {
+      sharings: sharings.filter(function (s) {
+        return !areAllRecipientsRevoked(s) && !hasBeenSelfRevoked(s, instanceUri);
+      }),
+      permissions: permissions,
+      apps: apps
+    }
+  };
+};
+var addSharing = function addSharing(data, path) {
+  return {
+    type: ADD_SHARING,
+    data: data,
+    path: path
+  };
+};
+var updateSharing = function updateSharing(sharing) {
+  return {
+    type: UPDATE_SHARING,
+    sharing: sharing
+  };
+};
+var revokeRecipient = function revokeRecipient(sharing, index, path) {
   return {
     type: REVOKE_RECIPIENT,
 
@@ -6075,11 +6295,11 @@ const revokeRecipient = (sharing, index, path) => {
     We can't just simply remove it, 'cauz we use the index
     to remove members..
     */
-    sharing: _objectSpread({}, sharing, {
-      attributes: _objectSpread({}, sharing.attributes, {
-        members: sharing.attributes.members.map((m, idx) => {
+    sharing: _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, sharing, {
+      attributes: _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, sharing.attributes, {
+        members: sharing.attributes.members.map(function (m, idx) {
           if (idx === index) {
-            return _objectSpread({}, m, {
+            return _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, m, {
               status: 'revoked'
             });
           }
@@ -6088,68 +6308,122 @@ const revokeRecipient = (sharing, index, path) => {
         })
       })
     }),
-    path
+    path: path
   };
 };
-const revokeSelf = sharing => ({
-  type: REVOKE_SELF,
-  sharing
-});
-const addSharingLink = data => ({
-  type: ADD_SHARING_LINK,
-  data
-});
-const revokeSharingLink = permissions => ({
-  type: REVOKE_SHARING_LINK,
-  permissions
-});
-const receivePaths = paths => ({
-  type: RECEIVE_PATHS,
-  paths
-});
-const matchingInstanceName = (instanceUri = '') => shareMember => shareMember.instance && shareMember.instance.toString().toLowerCase() === instanceUri.toLowerCase(); // reducers
+var revokeSelf = function revokeSelf(sharing) {
+  return {
+    type: REVOKE_SELF,
+    sharing: sharing
+  };
+};
+var addSharingLink = function addSharingLink(data) {
+  return {
+    type: ADD_SHARING_LINK,
+    data: data
+  };
+};
+var revokeSharingLink = function revokeSharingLink(permissions) {
+  return {
+    type: REVOKE_SHARING_LINK,
+    permissions: permissions
+  };
+};
+var receivePaths = function receivePaths(paths) {
+  return {
+    type: RECEIVE_PATHS,
+    paths: paths
+  };
+};
+var matchingInstanceName = function matchingInstanceName() {
+  var instanceUri = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  return function (shareMember) {
+    return shareMember.instance && shareMember.instance.toString().toLowerCase() === instanceUri.toLowerCase();
+  };
+}; // reducers
 
-const byIdInitialState = {
+var byIdInitialState = {
   sharings: [],
   permissions: []
 };
 
-const isItemEmpty = item => item.sharings.length === 0 && item.permissions.length === 0;
-
-const updateByIdItem = (state, id, updater) => {
-  const {
-    [id]: byIdState
-  } = state,
-        rest = _objectWithoutProperties(state, [id].map(_toPropertyKey));
-
-  const update = updater(byIdState || byIdInitialState);
-  return isItemEmpty(update) ? rest : _objectSpread({}, rest, {
-    [id]: update
-  });
+var isItemEmpty = function isItemEmpty(item) {
+  return item.sharings.length === 0 && item.permissions.length === 0;
 };
 
-const indexSharing = (state = {}, sharing) => getSharedDocIds(sharing).reduce((byId, id) => updateByIdItem(byId, id, state => _objectSpread({}, state, {
-  sharings: [...state.sharings, sharing.id]
-})), state);
+var updateByIdItem = function updateByIdItem(state, id, updater) {
+  var byIdState = state[id],
+      rest = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default()(state, [id].map(_toPropertyKey));
 
-const forgetSharing = (state = {}, sharing) => getSharedDocIds(sharing).reduce((byId, id) => updateByIdItem(byId, id, state => _objectSpread({}, state, {
-  sharings: state.sharings.filter(sid => sid !== sharing.id)
-})), state);
+  var update = updater(byIdState || byIdInitialState);
+  return isItemEmpty(update) ? rest : _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, rest, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()({}, id, update));
+};
 
-const indexPermission = (state = {}, perm) => getSharedDocIds(perm).reduce((byId, id) => updateByIdItem(byId, id, state => _objectSpread({}, state, {
-  permissions: [...state.permissions, perm.id]
-})), state);
+var indexSharing = function indexSharing() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var sharing = arguments.length > 1 ? arguments[1] : undefined;
+  return getSharedDocIds(sharing).reduce(function (byId, id) {
+    return updateByIdItem(byId, id, function (state) {
+      return _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, state, {
+        sharings: [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(state.sharings), [sharing.id])
+      });
+    });
+  }, state);
+};
 
-const forgetPermission = (state = {}, permission) => getSharedDocIds(permission).reduce((byId, id) => updateByIdItem(byId, id, state => _objectSpread({}, state, {
-  permissions: state.permissions.filter(pid => pid !== permission.id)
-})), state);
+var forgetSharing = function forgetSharing() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var sharing = arguments.length > 1 ? arguments[1] : undefined;
+  return getSharedDocIds(sharing).reduce(function (byId, id) {
+    return updateByIdItem(byId, id, function (state) {
+      return _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, state, {
+        sharings: state.sharings.filter(function (sid) {
+          return sid !== sharing.id;
+        })
+      });
+    });
+  }, state);
+};
 
-const byDocId = (state = {}, action) => {
+var indexPermission = function indexPermission() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var perm = arguments.length > 1 ? arguments[1] : undefined;
+  return getSharedDocIds(perm).reduce(function (byId, id) {
+    return updateByIdItem(byId, id, function (state) {
+      return _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, state, {
+        permissions: [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(state.permissions), [perm.id])
+      });
+    });
+  }, state);
+};
+
+var forgetPermission = function forgetPermission() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var permission = arguments.length > 1 ? arguments[1] : undefined;
+  return getSharedDocIds(permission).reduce(function (byId, id) {
+    return updateByIdItem(byId, id, function (state) {
+      return _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, state, {
+        permissions: state.permissions.filter(function (pid) {
+          return pid !== permission.id;
+        })
+      });
+    });
+  }, state);
+};
+
+var byDocId = function byDocId() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
   switch (action.type) {
     case RECEIVE_SHARINGS:
       // eslint-disable-next-line no-case-declarations
-      const intermediaryState = action.data.sharings.reduce((byId, sharing) => indexSharing(byId, sharing), state);
-      return action.data.permissions.reduce((byId, perm) => indexPermission(byId, perm), intermediaryState);
+      var intermediaryState = action.data.sharings.reduce(function (byId, sharing) {
+        return indexSharing(byId, sharing);
+      }, state);
+      return action.data.permissions.reduce(function (byId, perm) {
+        return indexPermission(byId, perm);
+      }, intermediaryState);
 
     case ADD_SHARING:
       return indexSharing(state, action.data);
@@ -6168,32 +6442,44 @@ const byDocId = (state = {}, action) => {
       return forgetSharing(state, action.sharing);
 
     case REVOKE_SHARING_LINK:
-      return action.permissions.reduce((byId, perm) => forgetPermission(byId, perm), state);
+      return action.permissions.reduce(function (byId, perm) {
+        return forgetPermission(byId, perm);
+      }, state);
 
     default:
       return state;
   }
 };
 
-const permissions = (state = [], action) => {
+var permissions = function permissions() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
   switch (action.type) {
     case RECEIVE_SHARINGS:
       return action.data.permissions;
 
     case ADD_SHARING_LINK:
-      return [...state, action.data];
+      return [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(state), [action.data]);
 
     case REVOKE_SHARING_LINK:
       // eslint-disable-next-line no-case-declarations
-      const permIds = action.permissions.map(p => p.id);
-      return state.filter(p => permIds.indexOf(p.id) === -1);
+      var permIds = action.permissions.map(function (p) {
+        return p.id;
+      });
+      return state.filter(function (p) {
+        return permIds.indexOf(p.id) === -1;
+      });
 
     default:
       return state;
   }
 };
 
-const apps = (state = [], action) => {
+var apps = function apps() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
   switch (action.type) {
     case RECEIVE_SHARINGS:
       return action.data.apps;
@@ -6203,29 +6489,37 @@ const apps = (state = [], action) => {
   }
 };
 
-const sharings = (state = [], action) => {
+var sharings = function sharings() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
   switch (action.type) {
     case RECEIVE_SHARINGS:
       return action.data.sharings;
 
     case ADD_SHARING:
-      return [...state, action.data];
+      return [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(state), [action.data]);
 
     case UPDATE_SHARING:
     case REVOKE_RECIPIENT:
-      return state.map(s => {
+      return state.map(function (s) {
         return s.id !== action.sharing.id ? s : action.sharing;
       });
 
     case REVOKE_SELF:
-      return state.filter(s => s.id !== action.sharing.id);
+      return state.filter(function (s) {
+        return s.id !== action.sharing.id;
+      });
 
     default:
       return state;
   }
 };
 
-const sharedPaths = (state = [], action) => {
+var sharedPaths = function sharedPaths() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
   switch (action.type) {
     case RECEIVE_PATHS:
       //!TODO Remove after we solved the sharedPaths bugs
@@ -6238,12 +6532,14 @@ const sharedPaths = (state = [], action) => {
       //eslint-disable-next-line
       console.log('ADD SHARING', action); //eslint-disable-next-line
 
-      const newState = [...state, action.path];
+      var newState = [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(state), [action.path]);
       return newState;
 
     case REVOKE_RECIPIENT:
       if (areAllRecipientsRevoked(action.sharing)) {
-        return state.filter(p => p !== action.path);
+        return state.filter(function (p) {
+          return p !== action.path;
+        });
       }
 
       return state;
@@ -6253,51 +6549,67 @@ const sharedPaths = (state = [], action) => {
   }
 };
 
-const reducer = (state = {}, action = {}) => ({
-  byDocId: byDocId(state.byDocId, action),
-  sharings: sharings(state.sharings, action),
-  permissions: permissions(state.permissions, action),
-  apps: apps(state.apps, action),
-  sharedPaths: sharedPaths(state.sharedPaths, action)
-});
+var reducer = function reducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  return {
+    byDocId: byDocId(state.byDocId, action),
+    sharings: sharings(state.sharings, action),
+    permissions: permissions(state.permissions, action),
+    apps: apps(state.apps, action),
+    sharedPaths: sharedPaths(state.sharedPaths, action)
+  };
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (reducer); // selectors
 
-const isOwner = (state, docId) => {
+var isOwner = function isOwner(state, docId) {
   if (state.byDocId[docId] && state.byDocId[docId].sharings.length !== 0) {
     return getSharingById(state, state.byDocId[docId].sharings[0]).attributes.owner === true;
   }
 
   return true;
 };
-const canReshare = (state, docId, instanceUri) => {
-  const sharing = getDocumentSharing(state, docId);
-  const me = sharing.attributes.members.find(matchingInstanceName(instanceUri));
+var canReshare = function canReshare(state, docId, instanceUri) {
+  var sharing = getDocumentSharing(state, docId);
+  var me = sharing.attributes.members.find(matchingInstanceName(instanceUri));
   return sharing.attributes.open_sharing === true && me && !me.read_only;
 };
-const getOwner = (state, docId) => getRecipients(state, docId).find(r => r.status === 'owner');
-const getRecipients = (state, docId) => {
-  const recipients = getDocumentSharings(state, docId).map(sharing => {
-    const type = getDocumentSharingType(sharing, docId);
-    return sharing.attributes.members.map((m, idx) => _objectSpread({}, m, {
-      type: m.read_only ? 'one-way' : type,
-      sharingId: sharing.id,
-      index: idx
-    }));
-  }).reduce((acc, member) => acc.concat(member), []).filter(r => r.status !== 'revoked');
+var getOwner = function getOwner(state, docId) {
+  return getRecipients(state, docId).find(function (r) {
+    return r.status === 'owner';
+  });
+};
+var getRecipients = function getRecipients(state, docId) {
+  var recipients = getDocumentSharings(state, docId).map(function (sharing) {
+    var type = getDocumentSharingType(sharing, docId);
+    return sharing.attributes.members.map(function (m, idx) {
+      return _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_3___default()({}, m, {
+        type: m.read_only ? 'one-way' : type,
+        sharingId: sharing.id,
+        index: idx
+      });
+    });
+  }).reduce(function (acc, member) {
+    return acc.concat(member);
+  }, []).filter(function (r) {
+    return r.status !== 'revoked';
+  });
 
   if (recipients[0] && recipients[0].status === 'owner') {
-    return [recipients[0], ...recipients.filter(r => r.status !== 'owner')];
+    return [recipients[0]].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(recipients.filter(function (r) {
+      return r.status !== 'owner';
+    })));
   }
 
   return recipients;
 };
-const getSharingLink = (state, docId, documentType) => {
+var getSharingLink = function getSharingLink(state, docId, documentType) {
   // This shouldn't have happened, but unfortunately some duplicate sharing links have been created in the past
-  const perms = getDocumentPermissions(state, docId);
+  var perms = getDocumentPermissions(state, docId);
   if (perms.length === 0) return null;
-  const perm = perms[0];
-  const code = lodash_get__WEBPACK_IMPORTED_MODULE_0___default()(perm, 'attributes.shortcodes.email') || lodash_get__WEBPACK_IMPORTED_MODULE_0___default()(perm, 'attributes.codes.email');
+  var perm = perms[0];
+  var code = lodash_get__WEBPACK_IMPORTED_MODULE_4___default()(perm, 'attributes.shortcodes.email') || lodash_get__WEBPACK_IMPORTED_MODULE_4___default()(perm, 'attributes.codes.email');
 
   if (code) {
     return buildSharingLink(state, documentType, code);
@@ -6305,80 +6617,128 @@ const getSharingLink = (state, docId, documentType) => {
     return null;
   }
 };
-const getSharingForSelf = (state, docId) => getDocumentSharing(state, docId);
-const getSharingType = (state, docId, instanceUri) => {
-  const sharing = getSharingForSelf(state, docId);
-  const type = getDocumentSharingType(sharing, docId);
+var getSharingForSelf = function getSharingForSelf(state, docId) {
+  return getDocumentSharing(state, docId);
+};
+var getSharingType = function getSharingType(state, docId, instanceUri) {
+  var sharing = getSharingForSelf(state, docId);
+  var type = getDocumentSharingType(sharing, docId);
   if (sharing.attributes.owner) return type;
-  const me = sharing.attributes.members.find(matchingInstanceName(instanceUri));
+  var me = sharing.attributes.members.find(matchingInstanceName(instanceUri));
   return me && me.read_only ? 'one-way' : type;
 };
-const getDocumentSharing = (state, docId) => getDocumentSharings(state, docId)[0] || null;
+var getDocumentSharing = function getDocumentSharing(state, docId) {
+  return getDocumentSharings(state, docId)[0] || null;
+};
 
-const getDocumentSharings = (state, docId) => !state.byDocId[docId] ? [] : state.byDocId[docId].sharings.map(id => getSharingById(state, id));
+var getDocumentSharings = function getDocumentSharings(state, docId) {
+  return !state.byDocId[docId] ? [] : state.byDocId[docId].sharings.map(function (id) {
+    return getSharingById(state, id);
+  });
+};
 
-const getSharingById = (state, id) => state.sharings.find(s => s.id === id);
-const getDocumentPermissions = (state, docId) => !state.byDocId[docId] ? [] : state.byDocId[docId].permissions.map(id => getPermissionById(state, id));
+var getSharingById = function getSharingById(state, id) {
+  return state.sharings.find(function (s) {
+    return s.id === id;
+  });
+};
+var getDocumentPermissions = function getDocumentPermissions(state, docId) {
+  return !state.byDocId[docId] ? [] : state.byDocId[docId].permissions.map(function (id) {
+    return getPermissionById(state, id);
+  });
+};
 
-const getPermissionById = (state, id) => state.permissions.find(s => s.id === id);
+var getPermissionById = function getPermissionById(state, id) {
+  return state.permissions.find(function (s) {
+    return s.id === id;
+  });
+};
 
-const getApps = state => state.apps;
+var getApps = function getApps(state) {
+  return state.apps;
+};
 
-const hasSharedParent = (state, document) => {
+var hasSharedParent = function hasSharedParent(state, document) {
   if (!state.sharedPaths) {
     //eslint-disable-next-line
     console.log('hasSharedParent should not occurs', state, document);
     return false;
   }
 
-  return state.sharedPaths.some(path => document.path.indexOf(`${path}/`) === 0);
+  return state.sharedPaths.some(function (path) {
+    return document.path.indexOf("".concat(path, "/")) === 0;
+  });
 };
-const hasSharedChild = (state, document) => {
+var hasSharedChild = function hasSharedChild(state, document) {
   if (!state.sharedPaths) {
     //eslint-disable-next-line
     console.log('hasSharedChild should not occurs', state, document);
     return false;
   }
 
-  const ret = state.sharedPaths.some(path => path.indexOf(`${document.path}/`) === 0);
+  var ret = state.sharedPaths.some(function (path) {
+    return path.indexOf("".concat(document.path, "/")) === 0;
+  });
   return ret;
 };
-const isShared = (state, document) => {
+var isShared = function isShared(state, document) {
   if (!state.sharedPaths) {
     //eslint-disable-next-line
     console.log('isShared should not occurs', state, document);
     return false;
   }
 
-  return state.sharedPaths.some(path => path === document.path);
+  return state.sharedPaths.some(function (path) {
+    return path === document.path;
+  });
 }; // helpers
 
-const getSharedDocIds = doc => doc.type === 'io.cozy.sharings' ? getSharingDocIds(doc) : getPermissionDocIds(doc);
+var getSharedDocIds = function getSharedDocIds(doc) {
+  return doc.type === 'io.cozy.sharings' ? getSharingDocIds(doc) : getPermissionDocIds(doc);
+};
 
-const getSharingDocIds = sharing => sharing.attributes.rules.map(r => r.values).reduce((acc, val) => acc.concat(val), []);
+var getSharingDocIds = function getSharingDocIds(sharing) {
+  return sharing.attributes.rules.map(function (r) {
+    return r.values;
+  }).reduce(function (acc, val) {
+    return acc.concat(val);
+  }, []);
+};
 
-const getPermissionDocIds = perm => Object.keys(perm.attributes.permissions).map(k => perm.attributes.permissions[k].values).reduce((acc, val) => [...acc, ...val], []);
+var getPermissionDocIds = function getPermissionDocIds(perm) {
+  return Object.keys(perm.attributes.permissions).map(function (k) {
+    return perm.attributes.permissions[k].values;
+  }).reduce(function (acc, val) {
+    return [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(acc), _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(val));
+  }, []);
+};
 
-const areAllRecipientsRevoked = sharing => sharing.attributes.owner && sharing.attributes.members.filter(m => m.status !== 'revoked').length === 1;
+var areAllRecipientsRevoked = function areAllRecipientsRevoked(sharing) {
+  return sharing.attributes.owner && sharing.attributes.members.filter(function (m) {
+    return m.status !== 'revoked';
+  }).length === 1;
+};
 
-const hasBeenSelfRevoked = (sharing, instanceUri) => {
-  const me = sharing.attributes.members.find(matchingInstanceName(instanceUri));
+var hasBeenSelfRevoked = function hasBeenSelfRevoked(sharing, instanceUri) {
+  var me = sharing.attributes.members.find(matchingInstanceName(instanceUri));
   return !sharing.attributes.owner && me && me.status === 'revoked';
 };
 
-const getDocumentSharingType = (sharing, docId) => {
+var getDocumentSharingType = function getDocumentSharingType(sharing, docId) {
   if (!sharing) return null;
-  const rule = sharing.attributes.rules.find(r => r.values.indexOf(docId) !== -1);
+  var rule = sharing.attributes.rules.find(function (r) {
+    return r.values.indexOf(docId) !== -1;
+  });
   return rule.update === 'sync' && rule.remove === 'sync' ? 'two-way' : 'one-way';
 };
 
-const buildSharingLink = (state, documentType, sharecode) => {
-  const appUrl = getAppUrlForDoctype(state, documentType);
-  return `${appUrl}public?sharecode=${sharecode}`;
+var buildSharingLink = function buildSharingLink(state, documentType, sharecode) {
+  var appUrl = getAppUrlForDoctype(state, documentType);
+  return "".concat(appUrl, "public?sharecode=").concat(sharecode);
 };
 
-const getAppUrlForDoctype = (state, documentType) => {
-  const apps = getApps(state);
+var getAppUrlForDoctype = function getAppUrlForDoctype(state, documentType) {
+  var apps = getApps(state);
 
   switch (documentType) {
     case 'Files':
@@ -6389,15 +6749,17 @@ const getAppUrlForDoctype = (state, documentType) => {
       return getAppUrl(apps, 'photos');
 
     default:
-      throw new Error(`Sharing link: don't know which app to use for doctype ${documentType}`);
+      throw new Error("Sharing link: don't know which app to use for doctype ".concat(documentType));
   }
 };
 
-const getAppUrl = (apps, appName) => {
-  const app = apps.find(a => a.attributes.slug === appName && a.attributes.state === 'ready');
+var getAppUrl = function getAppUrl(apps, appName) {
+  var app = apps.find(function (a) {
+    return a.attributes.slug === appName && a.attributes.state === 'ready';
+  });
 
   if (!app) {
-    throw new Error(`Sharing link: app ${appName} not installed`);
+    throw new Error("Sharing link: app ".concat(appName, " not installed"));
   }
 
   return app.links.related;
@@ -6543,15 +6905,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router */ "dtw8");
 /* harmony import */ var cozy_client__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! cozy-client */ "SH7X");
 /* harmony import */ var cozy_client__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(cozy_client__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var sharing__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! sharing */ "OsbH");
-/* harmony import */ var _components_AlbumsView__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/AlbumsView */ "HDak");
-/* harmony import */ var _components_AlbumPhotos__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/AlbumPhotos */ "qW25");
-/* harmony import */ var _components_PhotosPicker__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/PhotosPicker */ "rtuO");
-/* harmony import */ var _components_AddToAlbumModal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/AddToAlbumModal */ "EUDN");
-/* harmony import */ var cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! cozy-ui/react/ */ "H+Xc");
-/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/Loading */ "ZFPb");
-/* harmony import */ var drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! drive/lib/doctypes */ "z6Q1");
-
+/* harmony import */ var _components_AlbumsView__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/AlbumsView */ "HDak");
+/* harmony import */ var _components_AlbumPhotos__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/AlbumPhotos */ "qW25");
+/* harmony import */ var _components_PhotosPicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/PhotosPicker */ "rtuO");
+/* harmony import */ var _components_AddToAlbumModal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/AddToAlbumModal */ "EUDN");
+/* harmony import */ var cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! cozy-ui/react/ */ "H+Xc");
+/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/Loading */ "ZFPb");
+/* harmony import */ var drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! drive/lib/doctypes */ "z6Q1");
 
 
 
@@ -6569,7 +6929,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ALBUMS_QUERY = function ALBUMS_QUERY(client) {
-  return client.find(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__["DOCTYPE_ALBUMS"], {
+  return client.find(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_14__["DOCTYPE_ALBUMS"], {
     created_at: {
       $gt: null
     }
@@ -6583,7 +6943,7 @@ var ALBUMS_QUERY = function ALBUMS_QUERY(client) {
 };
 
 var ALBUM_QUERY = function ALBUM_QUERY(client, ownProps) {
-  return client.get(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__["DOCTYPE_ALBUMS"], ownProps.router.params.albumId).include(['photos']);
+  return client.get(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_14__["DOCTYPE_ALBUMS"], ownProps.router.params.albumId).include(['photos']);
 };
 
 var addPhotos =
@@ -6609,9 +6969,9 @@ function () {
             photoCountAfter = album.photos.data.length;
 
             if (photoCountBefore + photos.length !== photoCountAfter) {
-              cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].info('Alerter.photos.already_added_photo');
+              cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].info('Alerter.photos.already_added_photo');
             } else {
-              cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].success('Albums.add_photos.success', {
+              cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].success('Albums.add_photos.success', {
                 name: album.name,
                 smart_count: photos.length
               });
@@ -6623,7 +6983,7 @@ function () {
           case 8:
             _context.prev = 8;
             _context.t0 = _context["catch"](0);
-            cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].error('Albums.add_photos.error.reference');
+            cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].error('Albums.add_photos.error.reference');
 
           case 11:
           case "end":
@@ -6650,7 +7010,7 @@ var ALBUM_MUTATIONS = function ALBUM_MUTATIONS(client) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return client.collection(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__["DOCTYPE_ALBUMS"]).checkUniquenessOf('name', album.name);
+                return client.collection(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_14__["DOCTYPE_ALBUMS"]).checkUniquenessOf('name', album.name);
 
               case 2:
                 unique = _context2.sent;
@@ -6660,7 +7020,7 @@ var ALBUM_MUTATIONS = function ALBUM_MUTATIONS(client) {
                   break;
                 }
 
-                cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].error('Albums.create.error.already_exists', {
+                cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].error('Albums.create.error.already_exists', {
                   name: name
                 });
                 return _context2.abrupt("return");
@@ -6702,7 +7062,7 @@ var ALBUM_MUTATIONS = function ALBUM_MUTATIONS(client) {
                 }));
 
               case 3:
-                cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].success('Albums.remove_photos.success', {
+                cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].success('Albums.remove_photos.success', {
                   album_name: album.name
                 });
                 clearSelection();
@@ -6712,7 +7072,7 @@ var ALBUM_MUTATIONS = function ALBUM_MUTATIONS(client) {
               case 7:
                 _context3.prev = 7;
                 _context3.t0 = _context3["catch"](0);
-                cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].error('Albums.remove_photos.error.generic');
+                cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].error('Albums.remove_photos.error.generic');
 
               case 10:
               case "end":
@@ -6755,17 +7115,17 @@ var ALBUMS_MUTATIONS = function ALBUMS_MUTATIONS(client) {
                   break;
                 }
 
-                cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].error('Albums.create.error.name_missing');
+                cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].error('Albums.create.error.name_missing');
                 return _context4.abrupt("return");
 
               case 5:
                 album = {
-                  _type: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__["DOCTYPE_ALBUMS"],
+                  _type: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_14__["DOCTYPE_ALBUMS"],
                   name: name,
                   created_at: created_at
                 };
                 _context4.next = 8;
-                return client.collection(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__["DOCTYPE_ALBUMS"]).checkUniquenessOf('name', album.name);
+                return client.collection(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_14__["DOCTYPE_ALBUMS"]).checkUniquenessOf('name', album.name);
 
               case 8:
                 unique = _context4.sent;
@@ -6775,14 +7135,14 @@ var ALBUMS_MUTATIONS = function ALBUMS_MUTATIONS(client) {
                   break;
                 }
 
-                cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].error('Albums.create.error.already_exists', {
+                cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].error('Albums.create.error.already_exists', {
                   name: name
                 });
                 return _context4.abrupt("return");
 
               case 12:
                 _context4.next = 14;
-                return client.create(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__["DOCTYPE_ALBUMS"], album, {
+                return client.create(drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_14__["DOCTYPE_ALBUMS"], album, {
                   photos: photos
                 }, {
                   updateQueries: {
@@ -6794,7 +7154,7 @@ var ALBUMS_MUTATIONS = function ALBUMS_MUTATIONS(client) {
 
               case 14:
                 resp = _context4.sent;
-                cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].success('Albums.create.success', {
+                cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].success('Albums.create.success', {
                   name: album.name,
                   smart_count: photos.length
                 });
@@ -6803,7 +7163,7 @@ var ALBUMS_MUTATIONS = function ALBUMS_MUTATIONS(client) {
               case 19:
                 _context4.prev = 19;
                 _context4.t0 = _context4["catch"](1);
-                cozy_ui_react___WEBPACK_IMPORTED_MODULE_13__["Alerter"].error('Albums.create.error.generic');
+                cozy_ui_react___WEBPACK_IMPORTED_MODULE_12__["Alerter"].error('Albums.create.error.generic');
 
               case 22:
               case "end":
@@ -6823,16 +7183,13 @@ var ALBUMS_MUTATIONS = function ALBUMS_MUTATIONS(client) {
 };
 
 var ConnectedAlbumsView = function ConnectedAlbumsView(props) {
-  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(sharing__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__["DOCTYPE_ALBUMS"],
-    documentType: "Albums"
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(cozy_client__WEBPACK_IMPORTED_MODULE_7__["Query"], {
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(cozy_client__WEBPACK_IMPORTED_MODULE_7__["Query"], {
     query: ALBUMS_QUERY
   }, function (result) {
-    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_AlbumsView__WEBPACK_IMPORTED_MODULE_9__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
+    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_AlbumsView__WEBPACK_IMPORTED_MODULE_8__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
       albums: result
     }, props));
-  }));
+  });
 };
 
 var ConnectedAddToAlbumModal = function ConnectedAddToAlbumModal(props) {
@@ -6843,7 +7200,7 @@ var ConnectedAddToAlbumModal = function ConnectedAddToAlbumModal(props) {
   }, function (result, _ref4) {
     var createAlbum = _ref4.createAlbum,
         addPhotos = _ref4.addPhotos;
-    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_AddToAlbumModal__WEBPACK_IMPORTED_MODULE_12__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({}, result, {
+    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_AddToAlbumModal__WEBPACK_IMPORTED_MODULE_11__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({}, result, {
       createAlbum: createAlbum,
       addPhotos: addPhotos
     }, props));
@@ -6860,7 +7217,7 @@ var AlbumPhotosWithLoader = function AlbumPhotosWithLoader(_ref5) {
         removePhotos = _ref7.removePhotos;
 
     if (album && fetchStatus === 'loaded') {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_AlbumPhotos__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_AlbumPhotos__WEBPACK_IMPORTED_MODULE_9__["default"], {
         album: album,
         photos: album.photos.data,
         updateAlbum: updateAlbum,
@@ -6870,7 +7227,7 @@ var AlbumPhotosWithLoader = function AlbumPhotosWithLoader(_ref5) {
         fetchMore: album.photos.fetchMore.bind(album.photos)
       }, children);
     } else {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_Loading__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_Loading__WEBPACK_IMPORTED_MODULE_13__["default"], {
         size: 'xxlarge',
         loadingType: 'photos_fetching',
         middle: true
@@ -6887,7 +7244,7 @@ var ConnectedAlbumPhotos = Object(react_router__WEBPACK_IMPORTED_MODULE_6__["wit
     children: props.children
   }));
 });
-var CreateAlbumPicker = Object(cozy_client__WEBPACK_IMPORTED_MODULE_7__["withMutations"])(ALBUMS_MUTATIONS)(_components_PhotosPicker__WEBPACK_IMPORTED_MODULE_11__["default"]);
+var CreateAlbumPicker = Object(cozy_client__WEBPACK_IMPORTED_MODULE_7__["withMutations"])(ALBUMS_MUTATIONS)(_components_PhotosPicker__WEBPACK_IMPORTED_MODULE_10__["default"]);
 var ConnectedPhotosPicker = Object(react_router__WEBPACK_IMPORTED_MODULE_6__["withRouter"])(function (_ref8) {
   var params = _ref8.params,
       props = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0___default()(_ref8, ["params"]);
@@ -6898,7 +7255,7 @@ var ConnectedPhotosPicker = Object(react_router__WEBPACK_IMPORTED_MODULE_6__["wi
   }, props), function (_ref9, _ref10) {
     var data = _ref9.data;
     var addPhotos = _ref10.addPhotos;
-    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_PhotosPicker__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_PhotosPicker__WEBPACK_IMPORTED_MODULE_10__["default"], {
       album: data,
       addPhotos: addPhotos
     });
@@ -6928,7 +7285,7 @@ var belongsToAlbums = function belongsToAlbums(photos) {
           for (var _iterator2 = refs[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
             var ref = _step2.value;
 
-            if (ref.type === drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_15__["DOCTYPE_ALBUMS"]) {
+            if (ref.type === drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_14__["DOCTYPE_ALBUMS"]) {
               return true;
             }
           }
@@ -7816,12 +8173,12 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const ColorHash = () => {
-  const schemes = {
+var ColorHash = function ColorHash() {
+  var schemes = {
     base: ['304FFE', '2979FF', '00B0FF', '00DCE9', '00D5B8', '00C853', 'E70505', 'FF5700', 'FF7900', 'FFA300', 'B3C51D', '64DD17', 'FF2828', 'F819AA', 'AA00FF', '6200EA', '7190AB', '51658D']
   };
 
-  const hashCode = str => {
+  var hashCode = function hashCode(str) {
     var h, i, len, max;
     h = 0;
     max = Math.pow(2, 32);
@@ -7833,7 +8190,7 @@ const ColorHash = () => {
     return h;
   };
 
-  const getColor = (str, name) => {
+  var getColor = function getColor(str, name) {
     var scheme, hash;
     scheme = schemes[name] || schemes.base;
     hash = hashCode(str);
@@ -8250,12 +8607,28 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const arrToObj = (obj = {}, [key, val = true]) => {
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "J4zp");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var arrToObj = function arrToObj() {
+  var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  var _ref = arguments.length > 1 ? arguments[1] : undefined,
+      _ref2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_ref, 2),
+      key = _ref2[0],
+      _ref2$ = _ref2[1],
+      val = _ref2$ === void 0 ? true : _ref2$;
+
   obj[key] = val;
   return obj;
 };
 
-const getQueryParameter = () => window.location.search.substring(1).split('&').map(varval => varval.split('=')).reduce(arrToObj, {});
+var getQueryParameter = function getQueryParameter() {
+  return window.location.search.substring(1).split('&').map(function (varval) {
+    return varval.split('=');
+  }).reduce(arrToObj, {});
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (getQueryParameter);
 
@@ -10126,17 +10499,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var cozy_client__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! cozy-client */ "SH7X");
 /* harmony import */ var cozy_client__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(cozy_client__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var cozy_ui_react_I18n__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! cozy-ui/react/I18n */ "buk/");
-/* harmony import */ var photos_reducers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! photos/reducers */ "c0d6");
-/* harmony import */ var photos_components_AppRoute__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! photos/components/AppRoute */ "H+nv");
-/* harmony import */ var cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! cozy-ui/react/helpers/tracker */ "4kcP");
-/* harmony import */ var drive_lib_reporter__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! drive/lib/reporter */ "qxHO");
-/* harmony import */ var photos_appMetadata__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! photos/appMetadata */ "yZiV");
-/* harmony import */ var _doctypes__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./doctypes */ "NqoY");
+/* harmony import */ var sharing__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! sharing */ "OsbH");
+/* harmony import */ var drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! drive/lib/doctypes */ "z6Q1");
+/* harmony import */ var photos_reducers__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! photos/reducers */ "c0d6");
+/* harmony import */ var photos_components_AppRoute__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! photos/components/AppRoute */ "H+nv");
+/* harmony import */ var cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! cozy-ui/react/helpers/tracker */ "4kcP");
+/* harmony import */ var drive_lib_reporter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! drive/lib/reporter */ "qxHO");
+/* harmony import */ var photos_appMetadata__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! photos/appMetadata */ "yZiV");
+/* harmony import */ var _doctypes__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./doctypes */ "NqoY");
 
 
 var _this = undefined;
 
 /* global cozy __DEVELOPMENT__ */
+
+
 
 
 
@@ -10163,8 +10540,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var client = new cozy_client__WEBPACK_IMPORTED_MODULE_9___default.a({
     uri: cozyUrl,
     token: data.cozyToken,
-    appMetadata: photos_appMetadata__WEBPACK_IMPORTED_MODULE_15__["default"],
-    schema: _doctypes__WEBPACK_IMPORTED_MODULE_16__["default"]
+    appMetadata: photos_appMetadata__WEBPACK_IMPORTED_MODULE_17__["default"],
+    schema: _doctypes__WEBPACK_IMPORTED_MODULE_18__["default"]
   }); // We still need to init cozy-client-js for the Uploader
 
   cozy.client.init({
@@ -10179,22 +10556,22 @@ document.addEventListener('DOMContentLoaded', function () {
     lang: data.cozyLocale,
     replaceTitleOnMobile: true
   });
-  Object(drive_lib_reporter__WEBPACK_IMPORTED_MODULE_14__["configureReporter"])();
-  Object(drive_lib_reporter__WEBPACK_IMPORTED_MODULE_14__["setCozyUrl"])(cozyUrl);
+  Object(drive_lib_reporter__WEBPACK_IMPORTED_MODULE_16__["configureReporter"])();
+  Object(drive_lib_reporter__WEBPACK_IMPORTED_MODULE_16__["setCozyUrl"])(cozyUrl);
   var history = react_router__WEBPACK_IMPORTED_MODULE_8__["hashHistory"];
   var middlewares = [redux_thunk__WEBPACK_IMPORTED_MODULE_6__["default"], loggerMiddleware];
 
-  if (Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_13__["shouldEnableTracking"])() && Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_13__["getTracker"])()) {
-    var trackerInstance = Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_13__["getTracker"])();
+  if (Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_15__["shouldEnableTracking"])() && Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_15__["getTracker"])()) {
+    var trackerInstance = Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_15__["getTracker"])();
     history = trackerInstance.connectToHistory(react_router__WEBPACK_IMPORTED_MODULE_8__["hashHistory"]);
     trackerInstance.track(react_router__WEBPACK_IMPORTED_MODULE_8__["hashHistory"].getCurrentLocation()); // when using a hash history, the initial visit is not tracked by piwik react router
 
-    middlewares.push(Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_13__["createTrackerMiddleware"])());
+    middlewares.push(Object(cozy_ui_react_helpers_tracker__WEBPACK_IMPORTED_MODULE_15__["createTrackerMiddleware"])());
   } // Enable Redux dev tools
 
 
   var composeEnhancers =  true && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux__WEBPACK_IMPORTED_MODULE_5__["compose"];
-  var store = Object(redux__WEBPACK_IMPORTED_MODULE_5__["createStore"])(Object(redux__WEBPACK_IMPORTED_MODULE_5__["combineReducers"])(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, photos_reducers__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  var store = Object(redux__WEBPACK_IMPORTED_MODULE_5__["createStore"])(Object(redux__WEBPACK_IMPORTED_MODULE_5__["combineReducers"])(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, photos_reducers__WEBPACK_IMPORTED_MODULE_13__["default"], {
     cozy: client.reducer()
   })), composeEnhancers(redux__WEBPACK_IMPORTED_MODULE_5__["applyMiddleware"].apply(_this, middlewares)));
   Object(react_dom__WEBPACK_IMPORTED_MODULE_4__["render"])(react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(cozy_ui_react_I18n__WEBPACK_IMPORTED_MODULE_10__["I18n"], {
@@ -10205,10 +10582,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(cozy_client__WEBPACK_IMPORTED_MODULE_9__["CozyProvider"], {
     store: store,
     client: client
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(sharing__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    doctype: drive_lib_doctypes__WEBPACK_IMPORTED_MODULE_12__["DOCTYPE_ALBUMS"],
+    documentType: "Albums"
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_8__["Router"], {
     history: history,
-    routes: photos_components_AppRoute__WEBPACK_IMPORTED_MODULE_12__["default"]
-  }))), root);
+    routes: photos_components_AppRoute__WEBPACK_IMPORTED_MODULE_14__["default"]
+  })))), root);
 });
 
 /***/ }),
@@ -10983,79 +11363,90 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logException", function() { return logException; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCozyUrl", function() { return setCozyUrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logInfo", function() { return logInfo; });
-/* harmony import */ var raven_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! raven-js */ "NlKi");
-/* harmony import */ var raven_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(raven_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var drive_appMetadata__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! drive/appMetadata */ "unzg");
-/* harmony import */ var lib_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lib/logger */ "OTOu");
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "MVZn");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var raven_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raven-js */ "NlKi");
+/* harmony import */ var raven_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(raven_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var drive_appMetadata__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! drive/appMetadata */ "unzg");
+/* harmony import */ var lib_logger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lib/logger */ "OTOu");
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /* global __SENTRY_URL__, __DEVELOPMENT__ */
 
 
 
-const ANALYTICS_URL = typeof __SENTRY_URL__ === 'undefined' ? '' : __SENTRY_URL__; // normalize files path on mobile, see https://github.com/getsentry/sentry-cordova/blob/17e8b3395e8ce391ecf28658d0487b97487bb509/src/js/SentryCordova.ts#L213
+var ANALYTICS_URL = typeof __SENTRY_URL__ === 'undefined' ? '' : __SENTRY_URL__; // normalize files path on mobile, see https://github.com/getsentry/sentry-cordova/blob/17e8b3395e8ce391ecf28658d0487b97487bb509/src/js/SentryCordova.ts#L213
 
-const normalizeUrl = (url, pathStripRe) => url.replace(/^file:\/\//, 'app://').replace(pathStripRe, '');
+var normalizeUrl = function normalizeUrl(url, pathStripRe) {
+  return url.replace(/^file:\/\//, 'app://').replace(pathStripRe, '');
+};
 
-const normalizeData = data => {
-  const PATH_STRIP_RE = /^.*\/[^.]+(\.app|CodePush|.*(?=\/))/;
+var normalizeData = function normalizeData(data) {
+  var PATH_STRIP_RE = /^.*\/[^.]+(\.app|CodePush|.*(?=\/))/;
 
   if (data.culprit) {
     data.culprit = normalizeUrl(data.culprit, PATH_STRIP_RE);
   }
 
-  const stacktrace = data.stacktrace || data.exception && data.exception.values && data.exception.values[0] && data.exception.values[0].stacktrace;
+  var stacktrace = data.stacktrace || data.exception && data.exception.values && data.exception.values[0] && data.exception.values[0].stacktrace;
 
   if (stacktrace) {
-    stacktrace.frames = stacktrace.frames.map(frame => frame.filename !== '[native code]' ? _objectSpread({}, frame, {
-      filename: normalizeUrl(frame.filename, PATH_STRIP_RE)
-    }) : frame);
+    stacktrace.frames = stacktrace.frames.map(function (frame) {
+      return frame.filename !== '[native code]' ? _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, frame, {
+        filename: normalizeUrl(frame.filename, PATH_STRIP_RE)
+      }) : frame;
+    });
   }
 
   return data;
 };
-const getReporterConfiguration = () => ({
-  shouldSendCallback: true,
-  environment:  true ? 'development' : undefined,
-  release: drive_appMetadata__WEBPACK_IMPORTED_MODULE_1__["default"].version,
-  allowSecretKey: true,
-  dataCallback: normalizeData
-});
-const configureReporter = () => {
-  raven_js__WEBPACK_IMPORTED_MODULE_0___default.a.config(ANALYTICS_URL, getReporterConfiguration()).install();
+var getReporterConfiguration = function getReporterConfiguration() {
+  return {
+    shouldSendCallback: true,
+    environment:  true ? 'development' : undefined,
+    release: drive_appMetadata__WEBPACK_IMPORTED_MODULE_2__["default"].version,
+    allowSecretKey: true,
+    dataCallback: normalizeData
+  };
 };
-const logException = (err, extraContext = null, fingerprint = null) => {
-  return new Promise(resolve => {
-    raven_js__WEBPACK_IMPORTED_MODULE_0___default.a.captureException(err, {
+var configureReporter = function configureReporter() {
+  raven_js__WEBPACK_IMPORTED_MODULE_1___default.a.config(ANALYTICS_URL, getReporterConfiguration()).install();
+};
+var logException = function logException(err) {
+  var extraContext = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  var fingerprint = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  return new Promise(function (resolve) {
+    raven_js__WEBPACK_IMPORTED_MODULE_1___default.a.captureException(err, {
       extra: extraContext,
-      fingerprint
+      fingerprint: fingerprint
     });
-    lib_logger__WEBPACK_IMPORTED_MODULE_2__["default"].warn('Raven is recording exception');
-    lib_logger__WEBPACK_IMPORTED_MODULE_2__["default"].error(err);
+    lib_logger__WEBPACK_IMPORTED_MODULE_3__["default"].warn('Raven is recording exception');
+    lib_logger__WEBPACK_IMPORTED_MODULE_3__["default"].error(err);
     resolve();
   });
 };
-const setCozyUrl = instance => {
-  raven_js__WEBPACK_IMPORTED_MODULE_0___default.a.setTagsContext({
-    instance
+var setCozyUrl = function setCozyUrl(instance) {
+  raven_js__WEBPACK_IMPORTED_MODULE_1___default.a.setTagsContext({
+    instance: instance
   });
 };
 
-const logMessage = (message, serverUrl, level = 'info') => {
-  return new Promise(resolve => {
-    raven_js__WEBPACK_IMPORTED_MODULE_0___default.a.setUserContext = {
+var logMessage = function logMessage(message, serverUrl) {
+  var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'info';
+  return new Promise(function (resolve) {
+    raven_js__WEBPACK_IMPORTED_MODULE_1___default.a.setUserContext = {
       url: serverUrl
     };
-    raven_js__WEBPACK_IMPORTED_MODULE_0___default.a.captureMessage(`[${serverUrl}] ${message}`, {
-      level
+    raven_js__WEBPACK_IMPORTED_MODULE_1___default.a.captureMessage("[".concat(serverUrl, "] ").concat(message), {
+      level: level
     });
     resolve();
   });
 };
 
-const logInfo = (message, serverUrl) => logMessage(message, serverUrl, 'info');
+var logInfo = function logInfo(message, serverUrl) {
+  return logMessage(message, serverUrl, 'info');
+};
 
 /***/ }),
 
@@ -11436,7 +11827,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "q1tI");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const SharingContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();
+var SharingContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();
 /* harmony default export */ __webpack_exports__["default"] = (SharingContext);
 
 /***/ }),
@@ -11612,7 +12003,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var drive_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! drive/targets/manifest.webapp */ "XA+M");
 /* harmony import */ var drive_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(drive_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0__);
 
-const appMetadata = {
+var appMetadata = {
   slug: drive_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0___default.a.name,
   version: drive_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0___default.a.version
 };
@@ -11738,7 +12129,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var photos_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! photos/targets/manifest.webapp */ "u0ID");
 /* harmony import */ var photos_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(photos_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0__);
 
-const appMetadata = {
+var appMetadata = {
   slug: photos_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0___default.a.name,
   version: photos_targets_manifest_webapp__WEBPACK_IMPORTED_MODULE_0___default.a.version
 };
@@ -11761,31 +12152,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DOCTYPE_APPS", function() { return DOCTYPE_APPS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DOCTYPE_CONTACTS_VERSION", function() { return DOCTYPE_CONTACTS_VERSION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "schema", function() { return schema; });
-/* harmony import */ var models__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! models */ "OjRq");
-/* harmony import */ var drive_lib_extraDoctypes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! drive/lib/extraDoctypes */ "6dOw");
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "MVZn");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var models__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! models */ "OjRq");
+/* harmony import */ var drive_lib_extraDoctypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! drive/lib/extraDoctypes */ "6dOw");
 
 
-const DOCTYPE_FILES = 'io.cozy.files';
-const DOCTYPE_ALBUMS = 'io.cozy.photos.albums';
-const DOCTYPE_PHOTOS_SETTINGS = 'io.cozy.photos.settings';
-const DOCTYPE_APPS = 'io.cozy.apps';
-const DOCTYPE_CONTACTS_VERSION = 2;
-const schema = _objectSpread({
+
+var DOCTYPE_FILES = 'io.cozy.files';
+var DOCTYPE_ALBUMS = 'io.cozy.photos.albums';
+var DOCTYPE_PHOTOS_SETTINGS = 'io.cozy.photos.settings';
+var DOCTYPE_APPS = 'io.cozy.apps';
+var DOCTYPE_CONTACTS_VERSION = 2;
+var schema = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({
   files: {
     doctype: DOCTYPE_FILES
   },
   contacts: {
-    doctype: models__WEBPACK_IMPORTED_MODULE_0__["Contact"].doctype,
+    doctype: models__WEBPACK_IMPORTED_MODULE_1__["Contact"].doctype,
     doctypeVersion: DOCTYPE_CONTACTS_VERSION
   },
   groups: {
-    doctype: models__WEBPACK_IMPORTED_MODULE_0__["Group"].doctype
+    doctype: models__WEBPACK_IMPORTED_MODULE_1__["Group"].doctype
   }
-}, drive_lib_extraDoctypes__WEBPACK_IMPORTED_MODULE_1__["default"]);
+}, drive_lib_extraDoctypes__WEBPACK_IMPORTED_MODULE_2__["default"]);
 
 /***/ }),
 
