@@ -1,8 +1,8 @@
 {
   "name": "Photos",
   "name_prefix": "Cozy",
-  "slug": "photos",
-  "version": "1.14.5",
+  "slug": "app",
+  "version": "1.18.16",
   "type": "webapp",
   "licence": "AGPL-3.0",
   "icon": "public/app-icon.svg",
@@ -16,80 +16,28 @@
     "url": "https://cozy.io"
   },
   "langs": [
-    "ar",
-    "ca",
-    "cs",
-    "cs_CZ",
-    "da",
-    "de",
-    "de_DE",
-    "el",
     "en",
-    "eo",
-    "es",
-    "es_CO",
-    "es_ES",
-    "fr",
-    "it",
-    "ja",
-    "ko",
-    "nl",
-    "nl_NL",
-    "pl",
-    "pt",
-    "pt_BR",
-    "ro",
-    "ro_RO",
-    "ru",
-    "ru_RU",
-    "sk",
-    "sk_SK",
-    "sq",
-    "sq_AL",
-    "sv",
-    "tr",
-    "uk_UA",
-    "zh",
-    "zh_CN",
-    "zh_TW"
+    "fr"
   ],
   "locales": {
-    "ar": {},
-    "ca": {},
-    "cs": {},
-    "cs_CZ": {},
-    "da": {},
-    "de": {},
-    "de_DE": {},
-    "el": {},
-    "en": {},
-    "eo": {},
-    "es": {},
-    "es_CO": {},
-    "es_ES": {},
-    "fr": {},
-    "it": {},
-    "ja": {},
-    "ko": {},
-    "nl": {},
-    "nl_NL": {},
-    "pl": {},
-    "pt": {},
-    "pt_BR": {},
-    "ro": {},
-    "ro_RO": {},
-    "ru": {},
-    "ru_RU": {},
-    "sk": {},
-    "sk_SK": {},
-    "sq": {},
-    "sq_AL": {},
-    "sv": {},
-    "tr": {},
-    "uk_UA": {},
-    "zh": {},
-    "zh_CN": {},
-    "zh_TW": {}
+    "fr": {
+      "short_description": "Cozy Photos est l’application de visualisation et gestion de vos photos sur Cozy.",
+      "long_description": "Avec Cozy Photos vous pourrez :\n- Visualiser toutes les photos présentes dans votre Cozy, classées par date;\n- Organisez vos photos en albums;\n- Partager vos albums avec qui vous le souhaitez.",
+      "screenshots": [
+        "screenshots/fr/screenshot01.jpg",
+        "screenshots/fr/screenshot02.jpg",
+        "screenshots/fr/screenshot03.jpg"
+      ]
+    },
+    "en": {
+      "short_description": "Cozy Photos allows you to view and manage your photos on your Cozy",
+      "long_description": "With Cozy Photos, you can:\n- Get a timeline of all your memories\n- Organize your photos through albums\n- Share albums with just a link",
+      "screenshots": [
+        "screenshots/en/screenshot01.jpg",
+        "screenshots/en/screenshot02.jpg",
+        "screenshots/en/screenshot03.jpg"
+      ]
+    }
   },
   "screenshots": [
     "screenshots/fr/screenshot01.jpg",
@@ -112,40 +60,43 @@
     "onPhotoUpload": {
       "type": "node",
       "file": "services/onPhotoUpload/photos.js",
-      "trigger": "@event io.cozy.clusters.dummy",
-      "debounce": "1s"
+      "trigger": "@event io.cozy.files:CREATED:image:class",
+      "debounce": "5m"
     }
   },
   "permissions": {
     "files": {
       "description": "Required for photo access",
       "type": "io.cozy.files",
-      "methods": [
+      "verbs": [
         "GET",
         "POST",
-        "PUT"
+        "PUT",
+        "PATCH"
       ]
     },
     "apps": {
       "description": "Required by the cozy-bar to display the icons of the apps",
       "type": "io.cozy.apps",
       "verbs": [
-        "GET"
+        "GET",
+        "PUT"
       ]
     },
     "albums": {
       "description": "Required to manage photos albums",
       "type": "io.cozy.photos.albums",
-      "methods": [
+      "verbs": [
         "GET",
         "POST",
-        "PUT"
+        "PUT",
+        "DELETE"
       ]
     },
     "photos_settings": {
       "description": "Required to manage photos albums settings",
       "type": "io.cozy.photos.settings",
-      "methods": [
+      "verbs": [
         "GET",
         "POST",
         "PUT"
@@ -154,7 +105,7 @@
     "contacts": {
       "description": "Required to to share photos with your contacts",
       "type": "io.cozy.contacts",
-      "methods": [
+      "verbs": [
         "GET",
         "POST"
       ]
@@ -178,6 +129,17 @@
       "type": "cc.cozycloud.sentry",
       "verbs": [
         "POST"
+      ]
+    },
+    "triggers": {
+      "description": "Required to re-execute the clustering",
+      "type": "io.cozy.triggers",
+      "verbs": [
+        "POST"
+      ],
+      "selector": "worker",
+      "values": [
+        "service"
       ]
     }
   }
